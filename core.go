@@ -54,7 +54,7 @@ func (f FlagSet) Parse(flags []string) {
 		}
 
 		if handle, ok := state.Handle.(FlagHandleSetValue); ok {
-			if len(os.Args) < i+2 {
+			if len(flags) < i+2 {
 				fmt.Fprintf(os.Stderr, "Missing value for flag \"%s\".\n\n", flag)
 				f.Usage()
 			}
